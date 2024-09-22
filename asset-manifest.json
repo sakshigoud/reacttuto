@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/reacttuto/static/css/main.d7dff318.chunk.css",
+    "main.js": "/reacttuto/static/js/main.166ddd70.chunk.js",
+    "main.js.map": "/reacttuto/static/js/main.166ddd70.chunk.js.map",
+    "runtime~main.js": "/reacttuto/static/js/runtime~main.41ca7391.js",
+    "runtime~main.js.map": "/reacttuto/static/js/runtime~main.41ca7391.js.map",
+    "static/js/2.ca150098.chunk.js": "/reacttuto/static/js/2.ca150098.chunk.js",
+    "static/js/2.ca150098.chunk.js.map": "/reacttuto/static/js/2.ca150098.chunk.js.map",
+    "static/js/3.940f5f6f.chunk.js": "/reacttuto/static/js/3.940f5f6f.chunk.js",
+    "static/js/3.940f5f6f.chunk.js.map": "/reacttuto/static/js/3.940f5f6f.chunk.js.map",
+    "index.html": "/reacttuto/index.html",
+    "precache-manifest.27d48b130c42db47129ecb6bfe7c4ae8.js": "/reacttuto/precache-manifest.27d48b130c42db47129ecb6bfe7c4ae8.js",
+    "service-worker.js": "/reacttuto/service-worker.js",
+    "static/css/main.d7dff318.chunk.css.map": "/reacttuto/static/css/main.d7dff318.chunk.css.map"
+  }
+}
