@@ -2,9 +2,9 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
-// import About from './components/About';
+import About from './components/About';
 import React, { useState } from 'react';
-// import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
 function App() {
@@ -20,19 +20,15 @@ function App() {
     setAlert(null);
     },1500);
    }
+    const removeBodyClasses=()=>{
+      document.body.style.remove(backgroundColor);
+    }
    const toggleMode2 =()=>{
     if(mode === 'light'){
      setMode('dark');
      document.body.style.backgroundColor = "green";
     setbackgroundColor('green');
      showAlert("Green mode is enabled", "Success");
-     document.title = 'Reacttuto -green mode';
-     setInterval(() =>{
-      document.title = 'Reacttuto -dark mode';
-     },2000);
-     setInterval(() =>{
-      document.title = 'Reacttuto -Amazing website mode';
-     },1100);
     }
     else{
      setMode('light');
@@ -48,14 +44,12 @@ function App() {
     document.body.style.backgroundColor = "purple";
     setbackgroundColor('purple');
     showAlert("Purple mode is enabled", "Success");
-    document.title = 'Reacttuto -purple mode';
    }
    else{
     setMode('light');
     document.body.style.backgroundColor = "white";
     setbackgroundColor('white');
     showAlert("Light mode is enabled", "Success");
-    document.title = 'Reacttuto -light mode';
    }
  }
   const toggleMode =() =>{
@@ -64,31 +58,30 @@ function App() {
         document.body.style.backgroundColor = "#052a60";
         setbackgroundColor('#052a60');
         showAlert("Dark mode is enabaled","Success");
-        document.title = 'Reacttuto -dark mode';
+        // document.title = 'Reacttuto -dark mode';
       }
       else{
         setMode('light');
         document.body.style.backgroundColor = "white";
         setbackgroundColor('white');
         showAlert("Light mode is enabaled","Success");
-        document.title = 'Reacttuto -light mode';
+        // document.title = 'Reacttuto -light mode';
       }
     }
     return (
     <>
- {/* <BrowserRouter> */}
-      <Navbar title="TextUtils" mode ={mode} toggleMode={toggleMode} toggleMode1={toggleMode1} toggleMode2={toggleMode2} backgroundColor={backgroundColor}/>
+ <BrowserRouter>
+      <Navbar title="TextUtils" mode ={mode} toggleMode={toggleMode} toggleMode1={toggleMode1} toggleMode2={toggleMode2} backgroundColor={backgroundColor} removeBodyClasses={removeBodyClasses}/>
       <Alert alert={alert}/>
       <div className="container my-3">   
-        {/* <Routes> */}
-          {/* <Route path="/" element={ */}
-            <Textform heading = "Enter your text to analyse" mode ={mode} showAlert = {showAlert} backgroundColor={backgroundColor}/>
-            {/* } /> */}
-          {/* <Route path="about" element={<About />} />
-        </Routes> */}
+        <Routes> 
+          <Route path="/" element={
+            <Textform heading = "Text analyser" mode ={mode} showAlert = {showAlert} backgroundColor={backgroundColor}/>
+             } /> 
+           <Route path="about" element={<About  mode={mode}/>} />
+        </Routes>
       </div>
-      {/* </BrowserRouter> */}
- 
+       </BrowserRouter> 
  </>
   );
 }
